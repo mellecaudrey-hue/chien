@@ -6,160 +6,33 @@
 <title>Votre chien aboie trop ?</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Nunito', sans-serif;
-    background: linear-gradient(135deg, #e8f5ee 0%, #f0faf4 50%, #e3f4ea 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  }
-
-  .card {
-    background: #fff;
-    border-radius: 24px;
-    padding: 48px 40px;
-    max-width: 480px;
-    width: 100%;
-    box-shadow: 0 20px 60px rgba(44,122,75,0.12);
-    text-align: center;
-    animation: fadeUp 0.5s ease;
-  }
-
-  @keyframes fadeUp {
-    from { opacity:0; transform: translateY(20px); }
-    to   { opacity:1; transform: translateY(0); }
-  }
-
-  .paw { font-size: 52px; margin-bottom: 12px; display: block; }
-
-  h1 {
-    color: #1a5c35;
-    font-size: 26px;
-    font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
-
-  .subtitle {
-    color: #666;
-    font-size: 15px;
-    margin-bottom: 28px;
-  }
-  .subtitle strong { color: #2c7a4b; }
-
-  .question-label {
-    font-weight: 700;
-    color: #1a5c35;
-    font-size: 15px;
-    text-align: left;
-    margin-bottom: 12px;
-    display: block;
-  }
-
-  .choices { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
-
-  .choice {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: #f4faf6;
-    border: 2px solid #d0eada;
-    border-radius: 12px;
-    padding: 14px 16px;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-align: left;
-  }
-  .choice:hover { border-color: #2c7a4b; background: #e8f5ee; }
-  .choice input[type="radio"] { display: none; }
-  .choice.selected {
-    border-color: #2c7a4b;
-    background: #e2f5ea;
-  }
-  .choice.selected .dot {
-    background: #2c7a4b;
-    border-color: #2c7a4b;
-  }
-  .choice.selected .dot::after { display: block; }
-
-  .dot {
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    border: 2px solid #bbd6c5;
-    flex-shrink: 0;
-    position: relative;
-    transition: all 0.2s;
-  }
-  .dot::after {
-    content: '';
-    display: none;
-    width: 8px; height: 8px;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .choice-emoji { font-size: 22px; }
-  .choice-text { font-size: 14px; font-weight: 600; color: #2d2d2d; }
-
-  .email-input {
-    width: 100%;
-    padding: 14px 16px;
-    font-size: 15px;
-    font-family: 'Nunito', sans-serif;
-    border: 2px solid #d0eada;
-    border-radius: 12px;
-    outline: none;
-    transition: border-color 0.2s;
-    color: #333;
-    margin-bottom: 14px;
-  }
-  .email-input:focus { border-color: #2c7a4b; }
-  .email-input::placeholder { color: #aaa; }
-
-  .btn {
-    width: 100%;
-    padding: 16px;
-    background: #2c7a4b;
-    color: #fff;
-    font-family: 'Nunito', sans-serif;
-    font-size: 17px;
-    font-weight: 800;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.1s;
-    letter-spacing: 0.3px;
-  }
-  .btn:hover { background: #1a5c35; }
-  .btn:active { transform: scale(0.98); }
-  .btn:disabled { background: #9cc9af; cursor: not-allowed; }
-
-  .msg {
-    margin-top: 14px;
-    font-weight: 700;
-    font-size: 15px;
-    min-height: 22px;
-  }
-  .msg.success { color: #2c7a4b; }
-  .msg.error   { color: #c0392b; }
-
-  .legal {
-    font-size: 11px;
-    color: #bbb;
-    margin-top: 18px;
-  }
-
-  @media (max-width: 480px) {
-    .card { padding: 32px 20px; }
-    h1 { font-size: 22px; }
-  }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Nunito', sans-serif; background: linear-gradient(135deg, #e8f5ee 0%, #f0faf4 50%, #e3f4ea 100%); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+.card { background: #fff; border-radius: 24px; padding: 48px 40px; max-width: 480px; width: 100%; box-shadow: 0 20px 60px rgba(44,122,75,0.12); text-align: center; }
+.paw { font-size: 52px; margin-bottom: 12px; display: block; }
+h1 { color: #1a5c35; font-size: 26px; font-weight: 800; margin-bottom: 10px; }
+.subtitle { color: #666; font-size: 15px; margin-bottom: 28px; }
+.subtitle strong { color: #2c7a4b; }
+.question-label { font-weight: 700; color: #1a5c35; font-size: 15px; text-align: left; margin-bottom: 12px; display: block; }
+.choices { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+.choice { display: flex; align-items: center; gap: 12px; background: #f4faf6; border: 2px solid #d0eada; border-radius: 12px; padding: 14px 16px; cursor: pointer; transition: all 0.2s; text-align: left; }
+.choice:hover { border-color: #2c7a4b; background: #e8f5ee; }
+.choice.selected { border-color: #2c7a4b; background: #e2f5ea; }
+.choice.selected .dot { background: #2c7a4b; border-color: #2c7a4b; }
+.choice.selected .dot::after { display: block; }
+.dot { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #bbd6c5; flex-shrink: 0; position: relative; }
+.dot::after { content: ''; display: none; width: 8px; height: 8px; background: #fff; border-radius: 50%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.choice-emoji { font-size: 22px; }
+.choice-text { font-size: 14px; font-weight: 600; color: #2d2d2d; }
+.email-input { width: 100%; padding: 14px 16px; font-size: 15px; font-family: 'Nunito', sans-serif; border: 2px solid #d0eada; border-radius: 12px; outline: none; color: #333; margin-bottom: 14px; }
+.email-input:focus { border-color: #2c7a4b; }
+.email-input::placeholder { color: #aaa; }
+.btn { width: 100%; padding: 16px; background: #2c7a4b; color: #fff; font-family: 'Nunito', sans-serif; font-size: 17px; font-weight: 800; border: none; border-radius: 12px; cursor: pointer; }
+.btn:disabled { background: #9cc9af; cursor: not-allowed; }
+.msg { margin-top: 14px; font-weight: 700; font-size: 15px; min-height: 22px; }
+.msg.success { color: #2c7a4b; }
+.msg.error { color: #c0392b; }
+.legal { font-size: 11px; color: #bbb; margin-top: 18px; }
 </style>
 </head>
 <body>
@@ -167,78 +40,36 @@
   <span class="paw">🐾</span>
   <h1>Votre chien aboie trop ?</h1>
   <p class="subtitle">3 questions — recevez <strong>gratuitement</strong> le guide adapté.</p>
-
   <span class="question-label">Mon chien aboie surtout :</span>
-
   <div class="choices">
-    <label class="choice" onclick="select(this,'separation')">
-      <input type="radio" name="type" value="separation">
-      <span class="dot"></span>
-      <span class="choice-emoji">🏠</span>
-      <span class="choice-text">Quand je pars de la maison</span>
-    </label>
-    <label class="choice" onclick="select(this,'anxiete')">
-      <input type="radio" name="type" value="anxiete">
-      <span class="dot"></span>
-      <span class="choice-emoji">😰</span>
-      <span class="choice-text">Par peur ou anxiété</span>
-    </label>
-    <label class="choice" onclick="select(this,'appartement')">
-      <input type="radio" name="type" value="appartement">
-      <span class="dot"></span>
-      <span class="choice-emoji">🏙️</span>
-      <span class="choice-text">En appartement (voisins, bruits)</span>
-    </label>
+    <div class="choice" onclick="choisir(this,'separation')"><span class="dot"></span><span class="choice-emoji">🏠</span><span class="choice-text">Quand je pars de la maison</span></div>
+    <div class="choice" onclick="choisir(this,'anxiete')"><span class="dot"></span><span class="choice-emoji">😰</span><span class="choice-text">Par peur ou anxiété</span></div>
+    <div class="choice" onclick="choisir(this,'appartement')"><span class="dot"></span><span class="choice-emoji">🏙️</span><span class="choice-text">En appartement (voisins, bruits)</span></div>
   </div>
-
   <input class="email-input" type="email" id="email" placeholder="Votre adresse email">
-  <button class="btn" onclick="sendForm()">📩 Recevoir mon guide gratuit</button>
-
+  <button class="btn" id="btn" onclick="envoyer()">📩 Recevoir mon guide gratuit</button>
   <p class="msg" id="msg"></p>
   <p class="legal">Pas de spam. Désabonnement en 1 clic.</p>
 </div>
-
 <script>
-  var selected = null;
-
-  function select(el, val) {
-    document.querySelectorAll('.choice').forEach(function(c){ c.classList.remove('selected'); });
-    el.classList.add('selected');
-    selected = val;
-  }
-
-  var groups = {
-    'separation':  '186890986277831814',
-    'anxiete':     '186890990882129858',
-    'appartement': '186890996054754314'
-  };
-
-  async function sendForm() {
-    var email = document.getElementById('email').value.trim();
-    var msg   = document.getElementById('msg');
-    var btn   = document.querySelector('.btn');
-
-    msg.className = 'msg';
-    msg.textContent = '';
-
-    if (!selected) {
-      msg.className = 'msg error';
-      msg.textContent = '⚠️ Choisissez une réponse.';
-      return;
-    }
-    if (!email || !email.includes('@')) {
-      msg.className = 'msg error';
-      msg.textContent = '⚠️ Entrez un email valide.';
-      return;
-    }
-
-    btn.disabled = true;
-    btn.textContent = 'Envoi en cours…';
-
-    try {
-      var res = await fetch('https://connect.mailerlite.com/api/subscribers', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOWY1YmQ0M2FlODdjZTk3MGFiM2MwNmFkMjI0NTVhZGVmODQ2MGQzNWQ3ZWZjM2M2YjUyMTVkODM3NzZlN2FkMjNhMzZmYjg4MTA1MmJkM2UiLCJpYXQiOjE3Nzg1MTIxODYuNjM0NDg2LCJuYmYiOjE3Nzg1MTIxODYuNjM0NDksImV4cCI6NDkzNDE4NTc4Ni42MjE3NzgsInN1YiI6IjIzNDkyMDkiLCJzY29wZXMiOltdfQ.YoIzF-nFjN7p2xhudPk6bvMMZjUXgZAZIUCBvScHhcNtiEreKjIJiIAj894GdqWhNUEaA4rfv06J4TMOJJilrq6q4-Pc2iddA0PRWEkfY13usK4Dek8FWnv1KCiHmT7H2RvV8FVWmA2iGDLGHGQVZOPL12Q5SAD6cErwjWLs1O9lsMLa-5Nd89ltx6VWg6qOLZ9Dz8sBH816h8hOlPfBsp8PI8kLiDxf6mrWVuzlZV9OxD3x_9g-NFq1KxiS41cIQvGxtbl4YmgEEjtNs_M3mePI33SVKzdnMeUw6KAxaMi18Qdj3jugEsh-J4seOBmZeoR9ErcpfScnhFoCNbneiQHZXJ_g7sgqASTGyb57SBwGyZoPJVaDWrLx0Yd0oUhl2uAqN18A4tUsnRWlikB0A0BRTmg1-zhIa8WEJpN1xJ_W6FEDTHBkF2nE65IRbI2FCM1deILuQZ9keW4E4AC-P-dLTHqMeVPVmCsvYkx8Upwl-i4G3ZYwn9xQD-OZ9WWQnkAIx_nUVtE06PDyYAOnyZ6EIHbM6c5a92_bddKy7usD1opctveWCmFMJoKTjqWBcAv8Z7eGbi6R
+var choix=null;
+function choisir(el,val){document.querySelectorAll('.choice').forEach(function(c){c.classList.remove('selected')});el.classList.add('selected');choix=val;}
+var groupes={'separation':'186890986277831814','anxiete':'186890990882129858','appartement':'186890996054754314'};
+async function envoyer(){
+  var email=document.getElementById('email').value.trim();
+  var msg=document.getElementById('msg');
+  var btn=document.getElementById('btn');
+  msg.className='msg';msg.textContent='';
+  if(!choix){msg.className='msg error';msg.textContent='Choisissez une reponse.';return;}
+  if(!email||!email.includes('@')){msg.className='msg error';msg.textContent='Entrez un email valide.';return;}
+  btn.disabled=true;btn.textContent='Envoi en cours...';
+  try{
+    var res=await fetch('https://connect.mailerlite.com/api/subscribers',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json','Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOWY1YmQ0M2FlODdjZTk3MGFiM2MwNmFkMjI0NTVhZGVmODQ2MGQzNWQ3ZWZjM2M2YjUyMTVkODM3NzZlN2FkMjNhMzZmYjg4MTA1MmJkM2UiLCJpYXQiOjE3Nzg1MTIxODYuNjM0NDg2LCJuYmYiOjE3Nzg1MTIxODYuNjM0NDksImV4cCI6NDkzNDE4NTc4Ni42MjE3NzgsInN1YiI6IjIzNDkyMDkiLCJzY29wZXMiOltdfQ.YoIzF-nFjN7p2xhudPk6bvMMZjUXgZAZIUCBvScHhcNtiEreKjIJiIAj894GdqWhNUEaA4rfv06J4TMOJJilrq6q4-Pc2iddA0PRWEkfY13usK4Dek8FWnv1KCiHmT7H2RvV8FVWmA2iGDLGHGQVZOPL12Q5SAD6cErwjWLs1O9lsMLa-5Nd89ltx6VWg6qOLZ9Dz8sBH816h8hOlPfBsp8PI8kLiDxf6mrWVuzlZV9OxD3x_9g-NFq1KxiS41cIQvGxtbl4YmgEEjtNs_M3mePI33SVKzdnMeUw6KAxaMi18Qdj3jugEsh-J4seOBmZeoR9ErcpfScnhFoCNbneiQHZXJ_g7sgqASTGyb57SBwGyZoPJVaDWrLx0Yd0oUhl2uAqN18A4tUsnRWlikB0A0BRTmg1-zhIa8WEJpN1xJ_W6FEDTHBkF2nE65IRbI2FCM1deILuQZ9keW4E4AC-P-dLTHqMeVPVmCsvYkx8Upwl-i4G3ZYwn9xQD-OZ9WWQnkAIx_nUVtE06PDyYAOnyZ6EIHbM6c5a92_bddKy7usD1opctveWCmFMJoKTjqWBcAv8Z7eGbi6RkjalxTMiEAbH1UILyD_LAlV7kRS47-Hj726upp4k2Ar2yBLsbHX6nFEHjjXklDYefS5wgurmuoSbIcysX9NZwzFAbIaS33E'},body:JSON.stringify({email:email,groups:[groupes[choix]]})});
+    if(res.ok){msg.className='msg success';msg.textContent='Votre guide arrive dans votre boite mail !';}
+    else{var err=await res.json();msg.className='msg error';msg.textContent='Erreur : '+(err.message||'reessayez.');}
+  }catch(e){msg.className='msg error';msg.textContent='Erreur de connexion.';}
+  btn.disabled=false;btn.textContent='Recevoir mon guide gratuit';
+}
+</script>
+</body>
+</html>
